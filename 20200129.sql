@@ -290,7 +290,7 @@ SELECT ename, job, sal,
             job , 'SALESMAN' , case
                                 WHEN sal>1400 THEN sal*1.05
                                 ELSE sal *1.1
-                               end,
+                               end,                              
                 'MANAGER', sal*1.1,
                 'PRESIDENT', sal*1.2,
                 sal) bonus_sal
