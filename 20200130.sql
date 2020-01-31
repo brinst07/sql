@@ -111,7 +111,7 @@ GROUP BY empno;
 
 --SINGLE ROW FUNCTION의 경우 WHERE절에서 사용하는 것이 가능하나
 --MULTI ROW FUNCTION(GROUP FUNCTION)의 경우 WHERE절에서 사용하는 것이 불가능 하고
---HAVING 절에서 조건을 기술한다.
+--HAVING 절에서 조건을 기술한다.  
 
 --부서별 급여 합 조회, 단 급여합이 9000이상인  row만 조회
 --deptno, 급여합
@@ -158,4 +158,17 @@ SELECT TO_CHAR(hiredate, 'YYYY') hre_YYYY, count(*) cnt
 FROM emp
 GROUP BY TO_CHAR(hiredate, 'YYYY');
 
+--grp6
+SELECT count(dname) cnt
+FROM dept;
 
+--grp7
+SELECT COUNT(*)
+FROM(SELECT deptno
+     FROM emp
+     GROUP BY deptno);
+
+
+select deptno
+from emp
+group by deptno;
