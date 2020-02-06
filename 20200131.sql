@@ -159,4 +159,9 @@ SELECT b.buyer_id, b.buyer_name, p.prod_id, p.prod_name
 FROM prod p, buyer b
 WHERE p.prod_buyer = b.buyer_id;
 
+SELECT m.mem_id, m.mem_name, p.prod_id, p.prod_name, c.CART_QTY
+FROM member m, cart c, prod p
+WHERE m.mem_id = c.cart_member AND c.cart_prod = p.prod_id;
 
+SELECT m.mem_id, m.mem_name, p.prod_id, p.prod_name, c.CART_QTY
+FROM member m JOIN cart c ON( m.mem_id = c.cart_member) JOIN prod p ON (c.cart_prod = p.prod_id);

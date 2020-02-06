@@ -148,4 +148,6 @@ FROM product p LEFT OUTER JOIN cycle c ON(p.pid = c.pid AND c.cid=1);
 SELECT p.pid, p.pnm, NVL(c.cid,1), NVL(cs.cnm,'brown'), NVL(c.day,0), NVL(c.cnt,0)
 FROM product p LEFT OUTER JOIN cycle c ON(p.pid = c.pid AND c.cid=1)
 LEFT OUTER JOIN customer cs ON (c.cid =cs.cid);
+
+
                

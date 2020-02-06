@@ -232,10 +232,16 @@ WHERE deptno = 99;
 -- 트랜잭션 확정 : commit
 -- 트랜잭션 취소 : rollback
 
+--sub4
+--dept 테이블에는 5건의 데이터가 존재
+--emp 테이블에는 14명의 직원이 있고, 직원은 하나의 부서에 속해있다(deptno)
+--부서중 직원이 속해 있지 않은 부서 정보를 조회
+--서브쿼리에서 데이터의 조건이 맞는지 확인자 역할을 하는 서브쿼리 작성
+
 SELECT deptno, dname, loc
 FROM dept
 WHERE deptno NOT IN (SELECT deptno FROM emp);
 --WHERE (SELECT deptno FROM emp) NOT IN deptno;
 -- in 왼쪽에 있는 것은 결과 같이 하나여야 한다. 위값은 14건이 나오는 데이터이기 때문에 안된다.
 -- sql문을 전체로 비교하지말고 값 하나하나를 대입시키는 방법으로 생각해볼것 ex) for문
-
+-- 그룹바이를 사용하면 데이터를 읽고 묶는 작업이 추가되기 때문에 속도면에서는 느리다.
