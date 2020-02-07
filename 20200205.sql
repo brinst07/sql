@@ -194,7 +194,7 @@ SELECT *
 FROM fastfood;
 
 --시도, 시군구, 버거지수
-SELECT up.sido,up.sigungu,ROUND(bmk/b,5) c , dense_rank() over(order by ROUND(bmk/b,5) desc) rank
+SELECT up.sido,up.sigungu,ROUND(bmk/b,2) c , dense_rank() over(order by ROUND(bmk/b,2) desc) rank
 FROM(
      SELECT  sido, sigungu,sum(a) bmk
      FROM
