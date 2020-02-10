@@ -1,16 +1,10 @@
 --tb_emp 테이블 생성
-
-
-CREATE TABLE tb_emp(
-        e_no NUMBER PRIMARY KEY,
-        e_nm VARCHAR2(50) NOT NULL,
-        g_cd VARCHAR2(20) NOT NULL,  
-        j_cd VARCHAR2(20) NOT NULL,
-        d_cd VARCHAR2(20) NOT NULL,
-        CONSTRAINT tb_grade_tb_emp FOREIGN KEY (g_cd) REFERENCES tb_grade (g_cd),
-        CONSTRAINT tb_dept_tb_emp FOREIGN KEY (d_cd) REFERENCES tb_dept (d_cd),
-        CONSTRAINT tb_job_tb_emp FOREIGN KEY (j_cd) REFERENCES tb_job (j_cd));
-
+drop table tb_counsel;
+drop table tb_emp;
+drop table tb_grade;
+drop table tb_dept;
+drop table tb_job;
+drop table tb_cs_cd;
 
 
 
@@ -31,6 +25,16 @@ CREATE TABLE tb_job(
         j_nm VARCHAR2(50) NOT NULL,
         ord NUMBER);
         
+
+CREATE TABLE tb_emp(
+        e_no NUMBER PRIMARY KEY,
+        e_nm VARCHAR2(50) NOT NULL,
+        g_cd VARCHAR2(20) NOT NULL,  
+        j_cd VARCHAR2(20) NOT NULL,
+        d_cd VARCHAR2(20) NOT NULL,
+        CONSTRAINT tb_grade_tb_emp FOREIGN KEY (g_cd) REFERENCES tb_grade (g_cd),
+        CONSTRAINT tb_dept_tb_emp FOREIGN KEY (d_cd) REFERENCES tb_dept (d_cd),
+        CONSTRAINT tb_job_tb_emp FOREIGN KEY (j_cd) REFERENCES tb_job (j_cd));
 
 --tb_cs_cd
 CREATE TABLE tb_cs_cd(
