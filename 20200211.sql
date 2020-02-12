@@ -268,7 +268,7 @@ ALTER TABLE emp DROP CONSTRAINT pk_emp;
 CREATE INDEX idx_n_emp_01 ON emp (empno);
 
 explain plan for
-SELECT *
+SELECT empno
 FROM emp
 WHERE empno = 7782;
 
